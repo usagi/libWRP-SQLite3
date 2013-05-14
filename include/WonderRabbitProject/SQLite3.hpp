@@ -357,7 +357,7 @@ namespace WonderRabbitProject
       
       inline void close()
       {
-        auto r = RESULT_CODE( C::sqlite3_close(pd) );
+        auto r = RESULT_CODE( C::sqlite3_close_v2(pd) );
         validate(r);
       }
       
