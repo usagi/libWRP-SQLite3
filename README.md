@@ -2,9 +2,22 @@
 
 C++ SQLite3 wrapper library
 
-## Warning
+## Features
 
-This is alpha version state. Then the library will change destructive without pre informing, maybe.
+- simple for use
+    - open with ctor
+    - database and statement close automatically with dtor by RAII
+    - support `execute`
+    - support `prepare`, `bind` and `reset`
+        - `bind` and `reset are chainable :)
+    - support low-level controls; eg. `step`, `data_element`, `data_row`
+- compile-time optimization friendly
+    - 
+    - but, not support indeterminately in compile-time
+- header only
+    - :)
+- C++11 standard conformable
+    - :)
 
 ## Library
 
@@ -12,18 +25,26 @@ The library is in the "./include" directory.
 
 ### Usage and Sample
 
-<!--The sample is in the './sample' directory.-->
+    #include <WonderRabbitProject/SQLite3.hpp>
 
-(preparing now.)
+    using WonderRabbitProject::SQLite3::sqlite3_t;
+    
+    sqlite3_t database;
+    database.execute("create table t(a,b,c)");
+    database.execute("insert into t values(123, 4.5e+6, 'Hello')");
+    database.execute("insert into t values(987, 6.5e-4, 'World')");
+    auto statement = database.prepare("select * from t");
+    auto data = statement.data<int32_t, double, std::string>();
+    for ( const auto & row : data )
+      std::cout << std::get<0>(row) << "\n"
+                << std::get<1>(row) << "\n"
+                << std::get<2>(row) << endl
+                ;
 
-#### build with Ninja and g++
+And more examples available in:
 
-<!--
-    $ ninja
-    $ bin/00_glew-test
--->
-
-(preparing now.)
+1. [example\_01](example/example_01.cxx) // basic example
+2. [example\_02](example/example_02.cxx) // blob example
 
 ## Requirement
 
