@@ -57,9 +57,9 @@ And more examples available in:
 * [google-glog](https://code.google.com/p/google-glog/)
 * [Ninja](http://martine.github.com/ninja/)
 
-## Document
+## API Reference documentations
 
-n/a. To see the sample and library source code if you need :)
+- [libWRP-SQLite3 API Reference](documents/html/index.html)
 
 ## License
 
