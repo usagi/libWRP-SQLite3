@@ -59,7 +59,8 @@ And more examples available in:
 
 ## API Reference documentations
 
-- [libWRP-SQLite3 API Reference](documents/html/index.html)
+- [PDF version](documents/latex/refman.pdf)
+- [HTML version](documents/html/index.html)
 
 ## License
 
