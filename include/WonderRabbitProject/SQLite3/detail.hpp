@@ -27,8 +27,30 @@ namespace WonderRabbitProject
         static inline std::vector<uint8_t> get(C::sqlite3_stmt * ps)
         {
           auto size = static_cast<size_t>(C::sqlite3_column_bytes(ps, N));
-          auto data = static_cast<uint8_t *>(C::sqlite3_column_blob(ps, N));
-          return std::vector<uint8_t>(data, size);
+          auto data = static_cast<const uint8_t *>(C::sqlite3_column_blob(ps, N));
+          return std::vector<uint8_t>(data, data + size);
+        }
+      };
+      
+      template<size_t N>
+      struct column<N, std::vector<int8_t>>
+      {
+        static inline std::vector<int8_t> get(C::sqlite3_stmt * ps)
+        {
+          auto size = static_cast<size_t>(C::sqlite3_column_bytes(ps, N));
+          auto data = static_cast<const int8_t *>(C::sqlite3_column_blob(ps, N));
+          return std::vector<int8_t>(data, data + size);
+        }
+      };
+      
+      template<size_t N>
+      struct column<N, std::vector<char>>
+      {
+        static inline std::vector<char> get(C::sqlite3_stmt * ps)
+        {
+          auto size = static_cast<char>(C::sqlite3_column_bytes(ps, N));
+          auto data = static_cast<const char *>(C::sqlite3_column_blob(ps, N));
+          return std::vector<char>(data, data + size);
         }
       };
       

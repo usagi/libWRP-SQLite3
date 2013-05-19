@@ -29,3 +29,8 @@ add_executable(example_01 "example_01.cxx")
 target_link_libraries(example_01 sqlite3)
 target_link_libraries(example_01 debug glog)
 
+add_executable(example_02 "example_02.cxx")
+
+target_link_libraries(example_02 sqlite3)
+target_link_libraries(example_02 debug glog)
+
