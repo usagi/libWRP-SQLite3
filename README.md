@@ -9,7 +9,7 @@ C++ SQLite3 wrapper library
     - database and statement close automatically with dtor by RAII
     - support `execute`
     - support `prepare`, `bind` and `reset`
-        - `bind` and `reset are chainable :)
+        - `bind` and `reset` are chainable :)
     - support low-level controls; eg. `step`, `data_element`, `data_row`
 - compile-time optimization friendly
     - but, not support indeterminately in compile-time
