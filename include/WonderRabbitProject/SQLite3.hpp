@@ -48,7 +48,10 @@ namespace WonderRabbitProject
       {
         std::vector<std::tuple<TS ...>> data;
         auto i = std::back_inserter(data);
-        
+        RESULT_CODE r;
+        while( (r = step_no_validate()) == RESULT_CODE::ROW)
+          *i = data_row<TS ...>();
+        validate(r);
         return data;
       }
       

@@ -94,7 +94,6 @@ namespace WonderRabbitProject
         {
           using element_type = typename std::tuple_element<0, T>::type;
           std::get<0>(tuple) = detail::column<0, element_type>::get(ps);
-          //row_<N - 1, T>::set(ps, tuple);
         }
       };
       
