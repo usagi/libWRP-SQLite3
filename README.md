@@ -59,7 +59,7 @@ And more examples available in:
 
 ## API Reference documentations
 
-- [PDF version](documents/latex/refman.pdf)
+- [PDF version](https://github.com/usagi/libWRP-SQLite3/raw/master/documents/latex/refman.pdf)
 - [HTML version](documents/html/index.html)
 
 ## License
