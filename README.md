@@ -12,12 +12,13 @@ C++ SQLite3 wrapper library
         - `bind` and `reset are chainable :)
     - support low-level controls; eg. `step`, `data_element`, `data_row`
 - compile-time optimization friendly
-    - 
     - but, not support indeterminately in compile-time
 - header only
     - :)
-- C++11 standard conformable
-    - :)
+- C++11 standard conformable and seal C API
+    - rewrite to `enum class` from CPP `#define`s
+    - std::tuple for use to data row
+    - C API was sealed into the namespace `WonderRabbitProject::SQLite3::C`
 
 ## Library
 
