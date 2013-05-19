@@ -60,7 +60,10 @@ namespace WonderRabbitProject
         {
           auto size = static_cast<size_t>(C::sqlite3_column_bytes(ps, N));
           auto data = C::sqlite3_column_text(ps, N);
-          return std::string(data, size);
+          return std::string
+            ( reinterpret_cast<const char *>(data)
+            , size
+            );
         }
       };
       
@@ -71,7 +74,10 @@ namespace WonderRabbitProject
         {
           auto size = static_cast<size_t>(C::sqlite3_column_bytes16(ps, N));
           auto data = C::sqlite3_column_text16(ps, N);
-          return std::u16string(data, size);
+          return std::u16string
+            ( reinterpret_cast<const char16_t *>(data)
+            , size
+            );
         }
       };
       

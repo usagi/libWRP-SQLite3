@@ -4,12 +4,14 @@
 #include <string>
 #include <tuple>
 #include <vector>
-
-#include "SQLite3/detail.hpp"
+#include <limits>
+#include <cassert>
 
 #ifndef WRP_GLOG_ENABLED
   #define L(a,b)
 #endif
+
+#include "SQLite3/detail.hpp"
 
 namespace WonderRabbitProject
 {
