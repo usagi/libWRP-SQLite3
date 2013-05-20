@@ -235,11 +235,25 @@ namespace WonderRabbitProject
       template<class T>
       void execute(const T & sql) const
       {
-        L(INFO, "execute in");
+        L(INFO, "execute: sql = " << sql);
         auto p = prepare(sql);
-        L(INFO, "execute prepared");
         p.step();
-        L(INFO, "execute out");
+      }
+
+      template<class ... TS>
+      std::vector<std::tuple<TS ...>> execute_data(const std::string & sql) const
+      {
+        L(INFO, "execute_data: sql = " << sql);
+        auto p = prepare(sql);
+        return p.data<TS ...>();
+      }
+      
+      template<class ... TS>
+      std::vector<std::tuple<TS ...>> execute_data(const std::u16string & sql) const
+      {
+        L(INFO, "execute_data: sql = " << sql);
+        auto p = prepare(sql);
+        return p.data<TS ...>();
       }
       
     private:
