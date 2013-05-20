@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-2.4-1.40.13 (TeX Live 2012/Debian) (format=pdflatex 2013.4.26)  19 MAY 2013 21:51
+This is pdfTeX, Version 3.1415926-2.4-1.40.13 (TeX Live 2012/Debian) (format=pdflatex 2013.4.26)  20 MAY 2013 23:17
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1457,19 +1457,19 @@ Package hyperref Warning: Token not allowed in a PDF string (Unicode):
 
 ) (./structWonderRabbitProject_1_1SQLite3_1_1sqlite3__t.tex
 LaTeX Font Info:    Font shape `OT1/phv/bc/n' will be
-(Font)              scaled to size 8.99994pt on input line 29.
-LaTeX Font Info:    Try loading font information for OT1+pcr on input line 29.
+(Font)              scaled to size 8.99994pt on input line 35.
+LaTeX Font Info:    Try loading font information for OT1+pcr on input line 35.
 
 (/usr/share/texlive/texmf-dist/tex/latex/psnfss/ot1pcr.fd
 File: ot1pcr.fd 2001/06/04 font definitions for OT1/pcr.
 )
 
 LaTeX Font Warning: Font shape `OT1/pcr/bc/n' undefined
-(Font)              using `OT1/pcr/m/n' instead on input line 29.
+(Font)              using `OT1/pcr/m/n' instead on input line 35.
 
 LaTeX Font Info:    Font shape `T1/phv/m/n' will be
-(Font)              scaled to size 6.29996pt on input line 31.
-LaTeX Font Info:    Try loading font information for T1+pcr on input line 31.
+(Font)              scaled to size 6.29996pt on input line 37.
+LaTeX Font Info:    Try loading font information for T1+pcr on input line 37.
 (/usr/share/texlive/texmf-dist/tex/latex/psnfss/t1pcr.fd
 File: t1pcr.fd 2001/06/04 font definitions for T1/pcr.
 ))
@@ -1504,10 +1504,10 @@ LaTeX Font Warning: Some font shapes were not available, defaults substituted.
 Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 86.
  ) 
 Here is how much of TeX's memory you used:
- 11696 strings out of 493485
- 170206 string characters out of 3143526
+ 11700 strings out of 493485
+ 170546 string characters out of 3143526
  282087 words of memory out of 3000000
- 14646 multiletter control sequences out of 15000+200000
+ 14648 multiletter control sequences out of 15000+200000
  84755 words of font info for 143 fonts, out of 3000000 for 9000
  957 hyphenation exceptions out of 8191
  41i,12n,58p,616b,412s stack positions out of 5000i,500n,10000p,200000b,50000s
@@ -1518,10 +1518,10 @@ f-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/share/texlive/texmf-dist
 urw/helvetic/uhvb8a.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/helvetic
 /uhvb8ac.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/helvetic/uhvr8a.pfb
 >
-Output written on refman.pdf (12 pages, 77205 bytes).
+Output written on refman.pdf (12 pages, 77419 bytes).
 PDF statistics:
- 335 PDF objects out of 1000 (max. 8388607)
- 311 compressed objects within 4 object streams
- 96 named destinations out of 1000 (max. 500000)
+ 338 PDF objects out of 1000 (max. 8388607)
+ 314 compressed objects within 4 object streams
+ 98 named destinations out of 1000 (max. 500000)
  169 words of extra memory for PDF output out of 10000 (max. 10000000)
 
