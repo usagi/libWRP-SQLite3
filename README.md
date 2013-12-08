@@ -61,7 +61,7 @@ And more examples available in:
 ## Requirement
 
 * C++11
-* [libqlite3](http://www.sqlite.org/) &gt;= 3.7
+* [libqlite3](http://www.sqlite.org/) &gt;= 3.7.14
 
 ### Optional
 
