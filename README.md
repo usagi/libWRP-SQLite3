@@ -24,6 +24,16 @@ C++ SQLite3 wrapper library
 
 The library is in the "./include" directory.
 
+### Install
+
+to system: install to /usr/local
+
+    sudo ./install.sh
+
+to the other:
+
+    PREFIX=~/opt ./install.sh
+
 ### Usage and Sample
 
     #include <WonderRabbitProject/SQLite3.hpp>
