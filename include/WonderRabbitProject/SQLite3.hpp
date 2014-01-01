@@ -21,7 +21,7 @@ namespace WonderRabbitProject
     
     struct prepare_t final
     {
-      friend class sqlite3_t;
+      friend sqlite3_t;
       
       ~prepare_t()
       {
