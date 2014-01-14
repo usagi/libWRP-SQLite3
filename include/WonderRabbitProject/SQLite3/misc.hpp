@@ -19,7 +19,6 @@ namespace WonderRabbitProject
         default:
           // ToDo: to_string(RESULT_CODE)
           auto m = u8"FAIL; RESULT_CODE is " + std::to_string(int(r));
-          L(ERROR, m);
           throw std::runtime_error(m);
       }
     }
@@ -36,4 +35,3 @@ namespace WonderRabbitProject
     };
   }
 }
-

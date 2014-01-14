@@ -7,10 +7,6 @@
 #include <limits>
 #include <cassert>
 
-#ifndef WRP_GLOG_ENABLED
-  #define L(a,b)
-#endif
-
 #include "SQLite3/detail.hpp"
 
 namespace WonderRabbitProject
@@ -25,10 +21,8 @@ namespace WonderRabbitProject
       
       ~prepare_t()
       {
-        L(INFO, "prepare_t dtor in");
         auto r = RESULT_CODE( C::sqlite3_finalize(ps) );
         validate(r);
-        L(INFO, "prepare_t dtor out");
       }
       
       template<size_t N, class T>
@@ -198,7 +192,6 @@ namespace WonderRabbitProject
       
       prepare_t prepare(const std::string & sql) const
       {
-        L(INFO, "prepare(u8) in");
         C::sqlite3_stmt* ps;
         auto r = RESULT_CODE
         ( C::sqlite3_prepare_v2
@@ -210,13 +203,11 @@ namespace WonderRabbitProject
           )
         );
         validate(r);
-        L(INFO, "prepare(u8) out");
         return prepare_t(ps);
       }
       
       prepare_t prepare(const std::u16string & sql) const
       {
-        L(INFO, "prepare(u16) in");
         C::sqlite3_stmt* ps;
         auto r = RESULT_CODE
         ( C::sqlite3_prepare16_v2
@@ -228,14 +219,12 @@ namespace WonderRabbitProject
           )
         );
         validate(r);
-        L(INFO, "prepare(u16) out");
         return prepare_t(ps);
       }
       
       template<class T>
       void execute(const T & sql) const
       {
-        L(INFO, "execute: sql = " << sql);
         auto p = prepare(sql);
         p.step();
       }
@@ -243,7 +232,6 @@ namespace WonderRabbitProject
       template<class ... TS>
       std::vector<std::tuple<TS ...>> execute_data(const std::string & sql) const
       {
-        L(INFO, "execute_data: sql = " << sql);
         auto p = prepare(sql);
         return p.data<TS ...>();
       }
@@ -251,7 +239,6 @@ namespace WonderRabbitProject
       template<class ... TS>
       std::vector<std::tuple<TS ...>> execute_data(const std::u16string & sql) const
       {
-        L(INFO, "execute_data: sql = " << sql);
         auto p = prepare(sql);
         return p.data<TS ...>();
       }
@@ -269,14 +256,12 @@ namespace WonderRabbitProject
           )
         );
         validate(r);
-        L(INFO, "opened");
       }
       
       inline void close()
       {
         auto r = RESULT_CODE( C::sqlite3_close_v2(pd) );
         validate(r);
-        L(INFO, "closed");
       }
       
       C::sqlite3 * pd = nullptr;
@@ -284,4 +269,3 @@ namespace WonderRabbitProject
     
   }
 }
-
