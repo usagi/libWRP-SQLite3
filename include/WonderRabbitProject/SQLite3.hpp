@@ -8,7 +8,9 @@
 #include <cassert>
 
 #ifndef WRP_GLOG_ENABLED
-  #define L(a,b)
+  #ifndef L
+    #define L(a,b)
+  #endif
 #endif
 
 #include "SQLite3/detail.hpp"
