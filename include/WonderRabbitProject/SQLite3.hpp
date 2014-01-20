@@ -143,7 +143,7 @@ namespace WonderRabbitProject
 
       const prepare_t bind( zeroblob_size_t v, const int index = 1 ) const
       {
-        assert( v.size() > std::numeric_limits<int>::max() );
+        assert( v.size() > size_t(std::numeric_limits<int>::max()) );
         auto r = RESULT_CODE
         ( C::sqlite3_bind_zeroblob
           ( ps
