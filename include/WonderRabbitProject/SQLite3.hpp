@@ -177,8 +177,13 @@ namespace WonderRabbitProject
     struct sqlite3_t final
     {
       static constexpr OPEN_FLAGS default_open_flags
+// MSVC++2015Ç…ÇÕÇ±ÇÍÇ™íËêîéÆÇ…å©Ç¶Ç»Ç¢ÇªÇ§ÇæÅB
+#ifndef _MSC_VER
         = OPEN_FLAGS::READWRITE
         | OPEN_FLAGS::CREATE
+#else
+        = OPEN_FLAGS::READWRITE_CREATE
+#endif
         ;
       
       sqlite3_t

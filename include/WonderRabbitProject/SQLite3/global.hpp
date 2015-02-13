@@ -33,6 +33,10 @@ namespace WonderRabbitProject
     { READONLY       = 0x00000001
     , READWRITE      = 0x00000002
     , CREATE         = 0x00000004
+// MSVC++ Ç™Ç‹Ç∆Ç‡Ç… constexpr Ç‚íËêîéÆÇàµÇ¶Ç»Ç¢ÇΩÇﬂÇ…ïKóvÇ»íËã`
+#ifdef _MSC_VER
+    , READWRITE_CREATE = 0x00000006
+#endif
     , DELETEONCLOSE  = 0x00000008
     , EXCLUSIVE      = 0x00000010
     , AUTOPROXY      = 0x00000020
@@ -80,7 +84,11 @@ namespace WonderRabbitProject
 
     enum class RESULT_CODE : int
     { OK         =  0
+#ifndef _MSC_VER
     , ERROR      =  1
+#else
+    , ERROR_     =  1
+#endif
     , INTERNAL   =  2
     , PERM       =  3
     , ABORT      =  4
