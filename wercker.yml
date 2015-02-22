@@ -1,8 +1,10 @@
-box: wercker/ubuntu
+box: wercker/default
 build:
   steps:
-    - script:
-      - sudo apt install -y clang libsqlite3-dev cmake ninja-build
-      - mkdir build && cd build
-      - cmake -G Ninja -DCMAKE_CXX_COMPILER=clang++ -DCMAKE_BUILD_TYPE=release ..
-      - ninja
+    - validate-wecker-box
+    - script: |
+      mkdir build
+      cd build
+      cmake -G Ninja -DCMAKE_CXX_COMPILER=clang++-3.5 -DCMAKE_BUILD_TYPE=release
+      ninja
+

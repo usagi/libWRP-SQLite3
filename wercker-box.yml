@@ -1,0 +1,20 @@
+name: clang++
+version: 0.0.1
+inherits: wercker/default@0.0.1
+type: service
+platform: ubuntu@14.10
+description: Wecker box for Clang++-3.5
+keywords:
+  - c++
+  - clang
+  - cmake
+  - ninja
+packages:
+  - clang-3.5
+  - llvm-3.5-dev
+  - cmake
+  - ninja-build
+script: |
+  sudo apt update -y
+  sudo apt install ninja-build cmake llvm-3.5-dev clang-3.5 -y
+
