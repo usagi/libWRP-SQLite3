@@ -112,7 +112,7 @@ namespace WonderRabbitProject
           , index
           , text.data()
           , text.size()
-          , nullptr
+          , ((C::sqlite3_destructor_type)-1)
           )
         );
         validate(r);
@@ -127,7 +127,7 @@ namespace WonderRabbitProject
           , index
           , text.data()
           , text.size()
-          , nullptr
+          , ((C::sqlite3_destructor_type)-1)
           )
         );
         validate(r);
