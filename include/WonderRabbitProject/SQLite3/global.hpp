@@ -33,7 +33,7 @@ namespace WonderRabbitProject
     { READONLY       = 0x00000001
     , READWRITE      = 0x00000002
     , CREATE         = 0x00000004
-// MSVC++ ‚ª‚Ü‚Æ‚à‚É constexpr ‚â’è”®‚ğˆµ‚¦‚È‚¢‚½‚ß‚É•K—v‚È’è‹`
+// MSVC++ ãŒã¾ã¨ã‚‚ã« constexpr ã‚„å®šæ•°å¼ã‚’æ‰±ãˆãªã„ãŸã‚ã«å¿…è¦ãªå®šç¾©
 #ifdef _MSC_VER
     , READWRITE_CREATE = 0x00000006
 #endif
@@ -84,7 +84,7 @@ namespace WonderRabbitProject
 
     enum class RESULT_CODE : int
     { OK         =  0
-#ifndef _MSC_VER
+#ifndef _WIN32
     , ERROR      =  1
 #else
     , ERROR_     =  1
