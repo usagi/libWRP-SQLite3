@@ -17,7 +17,7 @@ namespace WonderRabbitProject
       template<size_t N, class T>
       struct column
       {
-        static inline T get(C::sqlite3_stmt * ps)
+        static inline T get(C::sqlite3_stmt*)
         { throw std::logic_error("not impl"); }
       };
       
