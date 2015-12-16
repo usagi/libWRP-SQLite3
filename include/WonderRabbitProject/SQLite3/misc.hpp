@@ -7,6 +7,15 @@ namespace WonderRabbitProject
 {
   namespace SQLite3
   {
+    struct runtime_error
+      : public std::runtime_error
+    {
+      const RESULT_CODE result_code;
+      runtime_error( const std::string& message, const RESULT_CODE r )
+        : std::runtime_error( message )
+        , result_code( r )
+      { }
+    };
     
     inline void validate(RESULT_CODE r)
     {
@@ -18,8 +27,8 @@ namespace WonderRabbitProject
           return;
         default:
           // ToDo: to_string(RESULT_CODE)
-          auto m = u8"FAIL; RESULT_CODE is " + std::to_string(int(r));
-          throw std::runtime_error(m);
+          auto m = u8"FAIL; RESULT_CODE is " + std::to_string( static_cast< int >( r ) );
+          throw runtime_error( m );
       }
     }
     
