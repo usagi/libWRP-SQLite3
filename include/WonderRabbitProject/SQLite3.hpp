@@ -6,8 +6,14 @@
 #include <vector>
 #include <limits>
 #include <cassert>
+#include <mutex>
+#include <atomic>
 
 #include "SQLite3/detail.hpp"
+
+#ifndef LIBWRP_SQLITE3_MULTITHREADING_MODE
+#define LIBWRP_SQLITE3_MULTITHREADING_MODE SQLITE_CONFIG_MULTITHREAD
+#endif
 
 namespace WonderRabbitProject
 {
@@ -176,8 +182,26 @@ namespace WonderRabbitProject
   
     struct sqlite3_t final
     {
+    private:
+      
+      static auto global_initialize()
+      {
+        static std::mutex m;
+        static std::atomic< bool > is_global_initialized( false );
+        
+        if ( is_global_initialized )
+          return;
+        
+        std::lock_guard< std::mutex > l( m );
+        
+        C::sqlite3_config( LIBWRP_SQLITE3_MULTITHREADING_MODE );
+        
+        is_global_initialized = true;
+      }
+      
+    public:
+      
       static constexpr OPEN_FLAGS default_open_flags
-// MSVC++2015Ç…ÇÕÇ±ÇÍÇ™íËêîéÆÇ…å©Ç¶Ç»Ç¢ÇªÇ§ÇæÅB
 #ifndef _MSC_VER
         = OPEN_FLAGS::READWRITE
         | OPEN_FLAGS::CREATE
@@ -252,6 +276,8 @@ namespace WonderRabbitProject
       
       inline void open(const std::string & filename, OPEN_FLAGS flags)
       {
+        global_initialize();
+        
         auto r = RESULT_CODE
         ( C::sqlite3_open_v2
           ( filename.data()
