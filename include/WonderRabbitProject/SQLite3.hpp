@@ -69,19 +69,28 @@ namespace WonderRabbitProject
       , const int index = 1
       ) const
       {
+        return bind( blob.data(), blob.size(), index );
+      }
+
+      const prepare_t & bind
+      ( const void* blob_data
+      , const std::size_t blob_size
+      , const int index = 1
+      ) const
+      {
         auto r = RESULT_CODE
         ( C::sqlite3_bind_blob
           ( ps
           , index
-          , blob.data()
-          , blob.size()
+          , blob_data
+          , blob_size
           , nullptr
           )
         );
         validate(r);
         return *this;
       }
-
+      
       const prepare_t & bind( const double v, const int index = 1 ) const
       {
         auto r = RESULT_CODE( C::sqlite3_bind_double(ps, index, v) );
