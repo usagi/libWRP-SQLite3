@@ -75,7 +75,7 @@ And more examples available in:
 
 ## License
 
-* [GNU GENERAL PUBLIC LICENSE Version 3](http://www.gnu.org/licenses/gpl.html)
+* [MIT](LICENSE)
 
 ## Author
 
